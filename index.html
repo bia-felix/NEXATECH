@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexaTech | Portal Interno</title>
+    <style>
+        :root {
+            --primary: #c891f3;
+            --secondary: #caacde;
+            --bg-creme: #fffdf5;
+            --text-dark: #4a4a4a;
+            --white: #ffffff;
+            --secret: #5a4a6e;
+        }
+
+        * { box-sizing: border-box; scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            background-color: var(--bg-creme);
+            color: var(--text-dark);
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .icon-computer { width: 50px; height: 50px; fill: white; }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            background: var(--secondary);
+            padding: 12px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a { text-decoration: none; color: white; font-weight: 600; padding: 5px 15px; }
+
+        .container { max-width: 850px; margin: 2rem auto; padding: 0 1.5rem; }
+
+        .card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 10px 25px rgba(202, 172, 222, 0.15);
+            border: 1px solid rgba(202, 172, 222, 0.2);
+        }
+
+        /* Banner de Sigilo */
+        .sigilo-alerta {
+            background-color: var(--secret);
+            color: #e0d5ed;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h2 { color: var(--primary); margin-top: 0; }
+
+        .btn {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            width: 100%;
+            transition: 0.3s;
+            margin-top: 10px;
+        }
+
+        .btn:hover { background-color: #b379e1; }
+
+        textarea, select, input {
+            width: 100%;
+            padding: 12px;
+            margin-top: 8px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+
+        #identificacao-campos {
+            display: none;
+            margin-top: 15px;
+            padding: 15px;
+            background-color: #f7f0fd;
+            border-radius: 8px;
+            border-left: 4px solid var(--secondary);
+        }
+
+        .checkbox-group {
+            margin: 15px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px;
+            background: #f9f9f9;
+            border-radius: 8px;
+        }
+
+        .checkbox-group input { width: auto; cursor: pointer; }
+
+        .tag-resolucao {
+            display: inline-block;
+            background: #e8f5e9;
+            color: #2e7d32;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>
+        <svg class="icon-computer" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20,18H4a3,3,0,0,1-3-3V7A3,3,0,0,1,4,4H20a3,3,0,0,1,3,3v8A3,3,0,0,1,20,18ZM4,6A1,1,0,0,0,3,7v8a1,1,0,0,0,1,1H20a1,1,0,0,0,1-1V7a1,1,0,0,0-1-1ZM21,19a1,1,0,0,1,0,2H3a1,1,0,0,1,0-2Z"/>
+        </svg>
+        NexaTech
+    </h1>
+    <p>Cultura Forte e Resolução Ágil</p>
+</header>
+
+<nav>
+    <a href="#suporte">Canal On-line</a>
+    <a href="#feedback">Feedback</a>
+    <a href="#agenda">Reuniões</a>
+</nav>
+
+<div class="container">
+
+    <div class="sigilo-alerta">
+        <span>🔒</span>
+        <strong>Compromisso de Sigilo:</strong> Todas as informações enviadas são criptografadas e analisadas exclusivamente pela gestão, garantindo sua total segurança e privacidade.
+    </div>
+    
+    <section id="suporte" class="card">
+        <span class="tag-resolucao">Resolução Assíncrona</span>
+        <h2>💬 Canal On-line de Suporte</h2>
+        <p style="font-size: 0.9rem; color: #666;">Relate problemas técnicos ou de fluxo aqui. Analisaremos e resolveremos internamente sem necessidade de pausar sua equipe.</p>
+        
+        <form onsubmit="event.preventDefault(); alert('Chamado aberto! Nossa equipe analisará o caso com sigilo e você receberá a atualização no e-mail.');">
+            <label>Qual o problema ou sugestão?</label>
+            <textarea rows="3" placeholder="Descreva o que está acontecendo... (ex: Erro no sistema X, sugestão de melhoria no processo Y)"></textarea>
+            
+            <label>Urgência:</label>
+            <select>
+                <option>Baixa - Apenas uma sugestão</option>
+                <option>Média - Atrapalha mas consigo trabalhar</option>
+                <option>Alta - Preciso de resolução urgente</option>
+            </select>
+            
+            <button type="submit" class="btn" style="background-color: var(--secret);">Enviar para Análise Interna</button>
+        </form>
+    </section>
+
+    <section id="feedback" class="card">
+        <h2>📝 Feedback Semanal</h2>
+        <form onsubmit="event.preventDefault(); alert('Feedback enviado com sucesso!');">
+            <div class="checkbox-group">
+                <input type="checkbox" id="anonimo" checked onchange="toggleIdentificacao()">
+                <label for="anonimo">Enviar de forma <strong>anônima</strong></label>
+            </div>
+
+            <div id="identificacao-campos">
+                <label>Nome Completo:</label>
+                <input type="text" placeholder="Nome">
+                <br><br>
+                <label>Cargo:</label>
+                <input type="text" placeholder="Cargo">
+            </div>
+
+            <label>Avaliação do Clima e Liderança:</label>
+            <select required>
+                <option value="">Selecione...</option>
+                <option>⭐⭐⭐⭐⭐ (Excelente)</option>
+                <option>⭐⭐⭐⭐ (Bom)</option>
+                <option>⭐⭐⭐ (Regular)</option>
+                <option>⭐⭐ (Ruim)</option>
+                <option>⭐ (Péssimo)</option>
+            </select>
+            
+            <br><br>
+            <label>Comentários Adicionais:</label>
+            <textarea rows="3"></textarea>
+
+            <button type="submit" class="btn">Enviar Diagnóstico</button>
+        </form>
+    </section>
+
+    <section id="agenda" class="card">
+        <h2>📅 Agendamento (Casos Específicos)</h2>
+        <p style="font-size: 0.85rem; color: #888;">Use esta opção apenas se o problema exigir conversa direta ou desenvolvimento profissional.</p>
+        <form onsubmit="event.preventDefault(); alert('Solicitação de reunião enviada!');">
+            <input type="date" required>
+            <button type="submit" class="btn" style="background-color: var(--secondary);">Solicitar Horário</button>
+        </form>
+    </section>
+
+</div>
+
+<script>
+    function toggleIdentificacao() {
+        const isAnonimo = document.getElementById('anonimo').checked;
+        const campos = document.getElementById('identificacao-campos');
+        campos.style.display = isAnonimo ? 'none' : 'block';
+    }
+</script>
+
+<footer style="text-align: center; padding: 30px; color: var(--secondary); font-size: 0.8rem;">
+    &copy; 2024 NexaTech - Inteligência Organizacional & Sigilo Total
+</footer>
+
+</body>
+</html>
